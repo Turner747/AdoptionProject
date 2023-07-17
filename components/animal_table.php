@@ -1,4 +1,3 @@
-
 <?php
     require('components/db_connection.php');
 

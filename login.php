@@ -1,4 +1,3 @@
-
 <?php 
 	session_start();
 
@@ -9,10 +8,10 @@
 	if (isset($_POST['submit'])) {
 		$submit = $_POST['submit'];
 
-		if ($submit == "Cancel") {
-			header('location: home.php');
-			exit;
-		}
+		// if ($submit == "Cancel") {
+		// 	header('home.php');
+		// 	exit;
+		// }
 	}
 
 	if(isset($_POST['name']) || isset($_POST['password'])) {

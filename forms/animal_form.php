@@ -1,6 +1,3 @@
-
-
-
 <form class="w-50 mb-5" action="" method="post">
 
 <?php echo (isset($deleteSwitch) && $deleteSwitch) 

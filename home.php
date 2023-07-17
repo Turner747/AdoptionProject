@@ -1,6 +1,4 @@
-
-<?php
-	session_start();
+<?php session_start();
 
 	if ((isset($_SESSION["isLoggedIn"]) || !empty($_SESSION["isLoggedIn"]))
 		&& (isset($_SESSION["name"]) || !empty($_SESSION["name"]))) {

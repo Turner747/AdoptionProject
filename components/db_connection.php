@@ -1,5 +1,5 @@
 <?php
-    $dbAddress = 'localhost';
+    $dbAddress = 'mysql';
     $dbUser = 'webauth';
     $dbPass = 'webauth';
     $dbName = 'adoption';

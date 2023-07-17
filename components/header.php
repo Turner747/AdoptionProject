@@ -9,7 +9,6 @@
 		$_SESSION["isLoggedIn"] = false;
 	}
 ?>
-
 <html>
 	<head>
 		<title><?php echo isset($title) ? $title." - " : ""; ?>Adoption Management System</title>
