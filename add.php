@@ -18,13 +18,13 @@
 		$submit = $_POST['submit'];
 
 		if ($submit == "Cancel") {
-			header('location: home.php');
+			header('location: /home.php');
 			exit;
 		}
 
 		require('components/validate_animal_input.php');
 
-		$name = $_POST['name'];
+		$animalName = $_POST['animal-name'];
 		$animalType = $_POST['animal-type'];
 		$adoptionFee = $_POST['adoption-fee'];
 		$sex = $_POST['sex'];
@@ -32,7 +32,7 @@
 
 		$query = "INSERT INTO animal (name, animal_type, adoption_fee, sex, desexed) VALUES (?,?,?,?,?)";
 		$stmt = $db->prepare($query);
-		$stmt->bind_param("ssisi", $name, $animalType, $adoptionFee, $sex, $desexed);
+		$stmt->bind_param("ssisi", $animalName, $animalType, $adoptionFee, $sex, $desexed);
 		$stmt->execute();
 
 		$affected_rows = $stmt->affected_rows;

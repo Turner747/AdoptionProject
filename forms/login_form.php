@@ -8,8 +8,8 @@
 		<input class="form-control" type="password" name="password">
 	</div>
 	<div class="d-flex justify-content-end">
-		<a class="btn btn-outline-primary" type=""
-				href="home.php">Cancel</a>
+		<input class="btn btn-outline-primary" type="submit" 
+				name="submit" value="Cancel">
 
 		<input class="ms-2 btn btn-primary" type="submit" 
 				name="submit" value="Log In">

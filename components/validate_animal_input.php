@@ -1,6 +1,6 @@
 <?php
 
-    if (!isset($_POST['name']) || empty($_POST['name'])) {
+    if (!isset($_POST['animal-name']) || empty($_POST['animal-name'])) {
         echo "<div class=\"alert alert-danger\">Error: Name not supplied.</div>";
         $db->close();
         exit;

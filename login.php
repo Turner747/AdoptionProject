@@ -8,10 +8,10 @@
 	if (isset($_POST['submit'])) {
 		$submit = $_POST['submit'];
 
-		// if ($submit == "Cancel") {
-		// 	header('home.php');
-		// 	exit;
-		// }
+		if ($submit == "Cancel") {
+			header('location: /home.php');
+			exit;
+		}
 	}
 
 	if(isset($_POST['name']) || isset($_POST['password'])) {
@@ -53,7 +53,7 @@
 			$db->close();
 			$_SESSION["isLoggedIn"] = true;
 			$_SESSION["name"] = $name;
-			header('location: home.php');
+			header('location: /home.php');
 		}
 		else {
 			echo "<div class=\"alert alert-danger\">Username or Password is incorrect<br>";

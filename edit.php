@@ -24,13 +24,13 @@
 		$submit = $_POST['submit'];
 
 		if ($submit == "Cancel") {
-			header('location: home.php');
+			header('location: /home.php');
 			exit;
 		}
 
 		require('components/validate_animal_input.php');
 
-		$name = $_POST['name'];
+		$animalName = $_POST['animal-name'];
 		$animalType = $_POST['animal-type'];
 		$adoptionFee = $_POST['adoption-fee'];
 		$sex = $_POST['sex'];
@@ -40,7 +40,7 @@
 					SET name=?, animal_type=?, adoption_fee=?, sex=?, desexed=?
 					WHERE animalid=?";
 		$stmt = $db->prepare($query);
-		$stmt->bind_param("ssisii", $name, $animalType, $adoptionFee, $sex, $desexed, $animalId);
+		$stmt->bind_param("ssisii", $animalName, $animalType, $adoptionFee, $sex, $desexed, $animalId);
 		$stmt->execute();
 
 		$affected_rows = $stmt->affected_rows;
@@ -75,7 +75,7 @@
 
 		$row = $result->fetch_assoc();
 
-		$name = $row['name'];
+		$animalName = $row['name'];
 		$animalType = $row['animal_type'];
 		$adoptionFee = $row['adoption_fee'];
 		$sex = $row['sex'];

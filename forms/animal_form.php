@@ -9,10 +9,8 @@
     <div class="mb-3">
         <label class="form-label" for="name">Name:</label>
         <?php echo (isset($deleteSwitch) && $deleteSwitch) 
-                ? $name 
-                : (isset ($name) 
-                    ? buildNameInput($name)
-                    :buildNameInput()); 
+                ? $animalName 
+                : buildNameInput($animalName); 
         ?>
     </div>
 
@@ -20,9 +18,7 @@
         <label class="form-label" for="animal-type">Animal Type:</label>
         <?php echo (isset($deleteSwitch) && $deleteSwitch) 
                 ? $animalType 
-                : (isset ($animalType) 
-                    ? buildAnimalTypeSelect($animalType)
-                    : buildAnimalTypeSelect()); 
+                : buildAnimalTypeSelect($animalType); 
         ?>
     </div>
 
@@ -30,9 +26,7 @@
         <label class="form-label" for="adoption-fee">Adoption Fee<?php echo (isset($deleteSwitch) && $deleteSwitch) ? "" : " ($)"; ?>:</label>
         <?php echo (isset($deleteSwitch) && $deleteSwitch) 
                 ? "$".$adoptionFee 
-                : (isset ($adoptionFee) 
-                    ? buildAdoptionFeeInput($adoptionFee)
-                    : buildAdoptionFeeInput()); 
+                : buildAdoptionFeeInput($adoptionFee); 
         ?>
     </div>
 
@@ -40,9 +34,7 @@
         <label class="form-label" for="sex">Sex:</label>
         <?php echo (isset($deleteSwitch) && $deleteSwitch) 
                 ? $sex 
-                : (isset ($sex) 
-                    ? buildSexSelect($sex)
-                    : buildSexSelect()); 
+                : buildSexSelect($sex); 
         ?>
     </div>
 
@@ -50,9 +42,7 @@
         <label class="form-label" for="desexed">Desexed?</label>
         <?php echo (isset($deleteSwitch) && $deleteSwitch) 
                 ? $desexed 
-                : (isset ($desexed) 
-                    ? buildDesexedSelect($desexed)
-                    : buildDesexedSelect()); 
+                : buildDesexedSelect($desexed); 
         ?>
     </div>
 
@@ -67,13 +57,13 @@
 
 <?php
 
-    function buildNameInput($name = null) {
+    function buildNameInput($animalName = null) {
 
-        if (isset($name)) {
-            return "<input class=\"form-control\" type=\"text\" name=\"name\" value=\"$name\">";
+        if (isset($animalName)) {
+            return "<input class=\"form-control\" type=\"text\" name=\"animal-name\" value=\"$animalName\">";
         }
         else {
-            return "<input class=\"form-control\" type=\"text\" name=\"name\" value=\"\">";
+            return "<input class=\"form-control\" type=\"text\" name=\"animal-name\" value=\"\">";
         }
 
     }

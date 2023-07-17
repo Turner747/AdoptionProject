@@ -24,7 +24,7 @@
 		$submit = $_POST['submit'];
 
 		if ($submit == "Cancel") {
-			header('location: home.php');
+			header('location: /home.php');
 			exit;
 		}
 
@@ -66,7 +66,7 @@
 
 		$row = $result->fetch_assoc();
 
-		$name = $row['name'];
+		$animalName = $row['name'];
 		$animalType = $row['animal_type'];
 		$adoptionFee = number_format($row['adoption_fee'],2);
 		$sex = $row['sex'];

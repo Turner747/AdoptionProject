@@ -1,5 +1,4 @@
-<?php
-	if ((isset($_SESSION["isLoggedIn"]) || !empty($_SESSION["isLoggedIn"]))
+<?php if ((isset($_SESSION["isLoggedIn"]) || !empty($_SESSION["isLoggedIn"]))
 		&& (isset($_SESSION["name"]) || !empty($_SESSION["name"]))) {
 		$isLoggedIn = $_SESSION["isLoggedIn"];
 		$name = $_SESSION["name"];
@@ -7,8 +6,7 @@
 	else {
 		$isLoggedIn = false;
 		$_SESSION["isLoggedIn"] = false;
-	}
-?>
+	}?>
 <html>
 	<head>
 		<title><?php echo isset($title) ? $title." - " : ""; ?>Adoption Management System</title>
@@ -20,7 +18,7 @@
 	<body>
 		<nav class="navbar bg-dark sticky-top mb-4">
 			<div class="container-fluid">
-				<h2 class="navbar-brand ms-2 text-light my-auto"><?php echo isset($heading) ? $heading : "Adoption Management System"; ?></h2>
+				<a class="navbar-brand ms-2 text-light my-auto" href="home.php"><?php echo isset($heading) ? $heading : "Adoption Management System"; ?></a>
 				<?php echo (isset($isLoggedIn) &&  $isLoggedIn) 
 						? "<div class=\"badge rounded-pill text-bg-primary d-flex justify-content-end\"><i class=\"bi bi-person-circle fs-4\"></i><div class=\"ms-3 me-2 fs-6 my-auto\">$name</div></div>" 
 						: ""; ?>
